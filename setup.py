@@ -21,7 +21,7 @@ setup(
                 "lietorch/src/lietorch_cpu.cpp"],
             extra_compile_args={
                 "cxx": ["-O2"], 
-                "nvcc": ["-O2"],
+                "nvcc": ["-O2", "-allow-unsupported-compiler"],
             }),
 
         CUDAExtension("lietorch_extras", 
@@ -35,7 +35,7 @@ setup(
             ],
             extra_compile_args={
                 "cxx": ["-O2"], 
-                "nvcc": ["-O2"],
+                "nvcc": ["-O2", "-allow-unsupported-compiler"],
             }),
     ],
     cmdclass={ "build_ext": BuildExtension }
